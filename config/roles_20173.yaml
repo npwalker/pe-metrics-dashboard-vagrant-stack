@@ -1,0 +1,53 @@
+---
+roles:
+  master201733:
+    provisioners:
+      - type: pe_bootstrap
+        role: :master
+        #version: '2017.3.3'
+        download_root: "http://enterprise.delivery.puppetlabs.net/2017.3/ci-ready"
+        version_file: 'http://getpe.delivery.puppetlabs.net/latest/2017.3'
+
+  agent_201733:
+    provisioners:
+      - type: pe_agent
+        #version: '2017.3.3'
+        master_vm: 'master201733-centos'
+        download_root: "http://enterprise.delivery.puppetlabs.net/2017./ci-ready"
+        version_file: 'http://getpe.delivery.puppetlabs.net/latest/2017.3'
+
+  master201732:
+    provisioners:
+      - type: pe_bootstrap
+        role: :master
+        version: '2017.3.2'
+
+  agent_201732:
+    provisioners:
+      - type: pe_agent
+        version: '2017.3.2'
+        master_vm: 'master201732-centos'
+
+  master201731:
+    provisioners:
+      - type: pe_bootstrap
+        role: :master
+        version: '2017.3.1'
+
+  agent_201731:
+    provisioners:
+      - type: pe_agent
+        version: '2017.3.1'
+        master_vm: 'master201731-centos'
+
+  master201730:
+    provisioners:
+      - type: pe_bootstrap
+        role: :master
+        version: '2017.3.0'
+
+  agent_201730:
+    provisioners:
+      - type: pe_agent
+        version: '2017.3.0'
+        master_vm: 'master201730-centos'

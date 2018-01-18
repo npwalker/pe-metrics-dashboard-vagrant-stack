@@ -4,6 +4,6 @@
 .vagrant
 Gemfile.local
 Gemfile.lock
+config/openstack.yaml
 bin
-config/*.yaml
 src/puppetlabs

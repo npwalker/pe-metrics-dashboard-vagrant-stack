@@ -1,0 +1,26 @@
+---
+roles:
+  install_packages:
+    provisioners:
+      - type: shell
+        inline: 'bash -c "puppet apply /vagrant/puppet_code/packages.pp"'
+
+  install_modules:
+    provisioners:
+      - type: shell
+        inline: 'r10k puppetfile install --moduledir /etc/puppetlabs/code/environments/production/modules/ --puppetfile /vagrant/Puppetfile'
+
+  site_pp:
+    provisioners:
+      - type: shell
+        inline: 'cat /vagrant/site.pp > /etc/puppetlabs/code/environments/production/manifests/site.pp'
+
+  pe_metrics:
+    provisioners:
+      - type: shell
+        inline: 'echo "metrics=true" > /opt/puppetlabs/facter/facts.d/metrics.txt; puppet agent -t;'
+
+  pe_metrics_dashboard:
+    provisioners:
+      - type: shell
+        inline: 'echo "metrics_dashboard=true" > /opt/puppetlabs/facter/facts.d/metrics_dashboard.txt; puppet agent -t;'
