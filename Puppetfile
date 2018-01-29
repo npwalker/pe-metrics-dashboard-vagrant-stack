@@ -11,7 +11,7 @@ mod "puppetlabs/concat"
 
 mod 'pe_metric_curl_cron_jobs',
   :git => 'https://github.com/npwalker/pe_metric_curl_cron_jobs',
-  :branch => 'master'
+  :branch => 'add_ability_to_ship_metrics_directly_to_influxdb'
 
 mod 'stdlib',
   :git    => 'https://github.com/puppetlabs/puppetlabs-stdlib',

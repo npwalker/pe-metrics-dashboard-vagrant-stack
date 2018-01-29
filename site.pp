@@ -18,15 +18,18 @@ node default {
   #   class { 'my_class': }
 
   if $::metrics == 'true' {
-    include pe_metric_curl_cron_jobs
+    class { 'pe_metric_curl_cron_jobs' :
+      collection_frequency =>  1,
+      influxdb_host        => 'pe-metrics-dashboard',
+    }
   }
   if $::metrics_dashboard == 'true' {
     class { 'pe_metrics_dashboard':
       add_dashboard_examples => true,
       overwrite_dashboards   => false,
       influxdb_database_name => ['pe_metrics','telegraf','graphite'],
-      configure_telegraf     => true,
-      enable_telegraf        => true,
+      configure_telegraf     => false,
+      enable_telegraf        => false,
       master_list            => ['master201732-centos'],
       puppetdb_list          => ['master201732-centos'],
     }
