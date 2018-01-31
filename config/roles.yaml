@@ -24,3 +24,8 @@ roles:
     provisioners:
       - type: shell
         inline: 'echo "metrics_dashboard=true" > /opt/puppetlabs/facter/facts.d/metrics_dashboard.txt; puppet agent -t;'
+
+  load_script:
+    provisioners:
+      - type: shell
+        inline: "cd /opt/puppetlabs; cp /vagrant/load_script.sh .; chmod 744 load_script.sh"

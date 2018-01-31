@@ -11,6 +11,7 @@ vms:
     debug-kit: false 
     box: puppetlabs/centos-7.2-64-nocm
     roles:
+      - load_script
       - pe_metrics
       - site_pp
       - install_modules
