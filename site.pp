@@ -30,8 +30,8 @@ node default {
       influxdb_database_name => ['pe_metrics','telegraf','graphite'],
       configure_telegraf     => false,
       enable_telegraf        => false,
-      master_list            => ['master201732-centos'],
-      puppetdb_list          => ['master201732-centos'],
+      master_list            => ['pe-metrics-puppet-master'],
+      puppetdb_list          => ['pe-metrics-puppet-master'],
     }
   }
 }

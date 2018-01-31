@@ -7,7 +7,7 @@ ssh:
 
 vms:
 
-  - name: master201732-centos
+  - name: pe-metrics-puppet-master
     debug-kit: false 
     box: puppetlabs/centos-7.2-64-nocm
     roles:
@@ -20,7 +20,7 @@ vms:
       - el-stop-firewall
       - el-fix-path
       - large-size
-      - master201732
+      - master201733
       - base
 
   - name: pe-metrics-dashboard
@@ -32,5 +32,5 @@ vms:
       - el-stop-firewall
       - el-fix-path
       - medium-size
-      - agent_201732
+      - agent_201733
       - base
