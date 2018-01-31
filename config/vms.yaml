@@ -16,10 +16,9 @@ vms:
       - install_modules
       - install_packages
       - pe-forward-console
-      - pe-memory-tuning2
       - el-stop-firewall
       - el-fix-path
-      - medium-size
+      - large-size
       - master201732
       - base
 
