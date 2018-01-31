@@ -23,7 +23,7 @@ roles:
   pe_metrics_dashboard:
     provisioners:
       - type: shell
-        inline: 'echo "metrics_dashboard=true" > /opt/puppetlabs/facter/facts.d/metrics_dashboard.txt; puppet agent -t;'
+        inline: '/bin/echo "metrics_dashboard=true" > /opt/puppetlabs/facter/facts.d/metrics_dashboard.txt; puppet agent -t;'
 
   load_script:
     provisioners:
