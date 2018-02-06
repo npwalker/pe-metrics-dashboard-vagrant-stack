@@ -20,7 +20,11 @@ node default {
   if $::metrics == 'true' {
     class { 'pe_metric_curl_cron_jobs' :
       collection_frequency =>  1,
-      influxdb_host        => 'pe-metrics-dashboard',
+      metrics_server_info  => {
+        'metrics_server_type' => 'influxdb',
+        'hostname'            => 'pe-metrics-dashboard',
+        'db_name'             => 'pe_metrics',
+      }
     }
   }
   if $::metrics_dashboard == 'true' {
